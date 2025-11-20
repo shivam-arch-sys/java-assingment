@@ -149,27 +149,18 @@ public class StringCodeGenerator {
     public static String generateCode(String input) {
         
         String noVowels = input.replaceAll("[aeiouAEIOU]", "");
-        
-        
         String upper = noVowels.toUpperCase();
-        
-       
-        String reversed = new StringBuilder(upper).reverse().toString();
-        
-        
+         String reversed = new StringBuilder(upper).reverse().toString();
         StringBuilder code = new StringBuilder();
         for (char c : reversed.toCharArray()) {
             code.append((int) c);
         }
-        
         return code.toString();
     }
-
     public static void main(String[] args) {
         String input = "HelloWorld";
         String code = generateCode(input);
-        System.out.println("Generated code: " + code);
-        
+        System.out.println("Generated code: " + code); 
     }
 }
 
