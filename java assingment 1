@@ -1,0 +1,489 @@
+1-
+public class EvenCheck {
+    public static void main(String[] args) {
+        int number = 10;
+
+        if (number % 2 == 0) {
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+    }
+}
+2-
+public class OddCheck {
+    public static void main(String[] args) {
+        int number = 7;
+
+        if (number % 2 != 0) {
+            System.out.println(number + " is odd.");
+        } else {
+            System.out.println(number + " is even.");
+        }
+    }
+}
+3-
+import java.util.Scanner;
+
+public class LastDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int lastDigit = Math.abs(number % 10);
+        System.out.println("Last digit: " + lastDigit);
+        
+    }
+}
+4-
+import java.util.Scanner;
+
+public class SecondLastDigit {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int secondLastDigit = Math.abs((number / 10) % 10);
+        System.out.println("Second last digit: " + secondLastDigit);
+      
+    }
+}
+5-
+import java.util.Scanner;
+
+public class SumLastDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        int lastDigit1 = Math.abs(num1 % 10);
+        int sum = lastDigit1 + lastDigit2;
+        System.out.println("Sum of last digits: " + sum);
+    }
+}
+6-
+import java.util.Scanner;
+
+public class MultipleCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int M = sc.nextInt();
+
+        if (M == 0) {
+            System.out.println("M cannot be zero!");
+        } else if (N % M == 0) {
+            System.out.println(N + " is an exact multiple of " + M);
+        } else {
+            System.out.println(N + " is NOT an exact multiple of " + M);
+        }
+    }
+}
+7-
+import java.util.Scanner;
+
+public class CountEvenNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int countEven = 0;
+        for (int i = 1; i <= 5; i++) {
+            int num = sc.nextInt();
+            if (num % 2 == 0) {
+                countEven++;
+            }
+        }
+
+        System.out.println("Number of even numbers: " + countEven);
+    }
+}
+8-
+import java.util.Scanner;
+
+public class CountOddNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int countOdd = 0;
+
+           for (int i = 1; i <= 5; i++) {
+            int num = sc.nextInt();
+            if (num % 2 != 0) {  // checks for odd
+                countOdd++;
+            }
+        }
+
+        System.out.println("Number of odd numbers: " + countOdd);
+    }
+}
+9-
+import java.util.Scanner;
+
+public class CountEvenOddNumbers {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int countEven = 0;
+        int countOdd = 0;
+        for (int i = 1; i <= 5; i++) {
+            int num = sc.nextInt();
+            if (num % 2 == 0) {
+                countEven++;
+            } else {
+                countOdd++;
+            }
+        }
+
+        System.out.println("Number of even numbers: " + countEven);
+        System.out.println("Number of odd numbers: " + countOdd);
+    }
+}
+10-
+import java.util.Scanner;
+
+public class IsPrime {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+
+        if (n <= 1) {
+            System.out.println(n + "not prime.");
+        } else {
+            boolean isPrime = true;
+            for (int i = 2; i <= Math.sqrt(n); i++) {
+                if (n % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            System.out.println(n + (isPrime ? " is prime." : " is not prime."));
+        }
+    }
+}
+11-
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        long factorial = 1;
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        System.out.println("Factorial of " + n + " is " + factorial);
+    }
+}
+12-
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = sc.nextInt();
+        long factorial = 1;
+
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+
+        System.out.println("Factorial of " + n + " is " + factorial);
+    }
+}
+13-
+import java.util.Scanner;
+public class Fibonacci {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = sc.nextInt();
+        int a = 0, b = 1, c = 0;
+        if (n == 1) c = 0;
+        else if (n == 2) c = 1;
+        else {
+            for (int i = 3; i <= n; i++) {
+                c = a + b;
+                a = b;
+                b = c;
+            }
+        }
+        System.out.println(n + "th Fibonacci number is " + c);
+    }
+}
+14-
+import java.util.Scanner;
+public class NthPrime {
+    public static boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = sc.nextInt();
+        int count = 0, num = 2, nthPrime = 0;
+
+        while (count < n) {
+            if (isPrime(num)) {
+                count++;
+                nthPrime = num;
+            }
+            num++;
+        }
+        System.out.println(n + "th prime number is " + nthPrime);
+    }
+}
+15-
+import java.util.Scanner;
+public class PrimesInRange {
+    public static boolean isPrime(int num) {
+        if (num <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) return false;
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        System.out.print("Enter lower bound: ");
+        int low = sc.nextInt();
+        System.out.print("Enter upper bound: ");
+        int high = sc.nextInt();
+        int count = 0;
+        for (int i = low; i <= high; i++) {
+            if (isPrime(i)) count++;
+        }
+        System.out.println("Number of primes in range: " + count);
+    }
+}
+16-
+import java.util.Scanner;
+public class CountAllDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = Math.abs(sc.nextInt());
+        int count = 0;
+        do {
+            count++;
+            num /= 10;
+        } while (num > 0);
+
+        System.out.println("Total digits: " + count);
+    }
+}
+17-
+import java.util.Scanner;
+public class CountUniqueDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = Math.abs(sc.nextInt());
+        boolean[] seen = new boolean[10];
+        int uniqueCount = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            if (!seen[digit]) {
+                uniqueCount++;
+                seen[digit] = true;
+            }
+            num /= 10;
+        }
+
+        System.out.println("Unique digits count: " + uniqueCount);
+    }
+}
+18-
+import java.util.Scanner;
+public class CountNonRepeatedDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = Math.abs(sc.nextInt());
+        int[] freq = new int[10];
+
+        while (num > 0) {
+            int digit = num % 10;
+            freq[digit]++;
+            num /= 10;
+        }
+
+        int nonRepeated = 0;
+        for (int i = 0; i < 10; i++) {
+            if (freq[i] == 1) nonRepeated++;
+        }
+        System.out.println("Non-repeated digits count: " + nonRepeated);
+    }
+}
+19-
+import java.util.Scanner;
+public class SumAllDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = Math.abs(sc.nextInt());
+        int sum = 0;
+        while (num > 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+
+        System.out.println("Sum of all digits: " + sum);
+    }
+}
+20-
+import java.util.Scanner;
+public class SumEvenDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = Math.abs(sc.nextInt());
+        int sumEven = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            if (digit % 2 == 0) sumEven += digit;
+            num /= 10;
+        }
+
+        System.out.println("Sum of even digits: " + sumEven);
+    }
+}
+21-
+import java.util.Scanner;
+
+public class SumOddDigits {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = Math.abs(sc.nextInt());
+        int sumOdd = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            if (digit % 2 != 0) sumOdd += digit;
+            num /= 10;
+        }
+
+        System.out.println("Sum of odd digits: " + sumOdd);
+    }
+}
+22-
+import java.util.Scanner;
+
+public class SumDigitsOpt {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = Math.abs(sc.nextInt());
+        char choice = sc.next().toUpperCase().charAt(0);
+        int sum = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            if ((choice == 'E' && digit % 2 == 0) || (choice == 'O' && digit % 2 != 0)) {
+                sum += digit;
+            }
+            num /= 10;
+        }
+
+        System.out.println("Sum of chosen digits: " + sum);
+    }
+}
+23-
+import java.util.Scanner;
+public class PalindromeNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int originalNum = num;
+        int reversedNum = 0;
+        while (num != 0) {
+            int digit = num % 10;
+            reversedNum = reversedNum * 10 + digit;
+            num /= 10;
+        }
+24-
+import java.util.Scanner;
+
+public class PalindromeRearrange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num = Math.abs(sc.nextInt()); 
+        int[] freq = new int[10];  
+        while (num > 0) {
+            int digit = num % 10;
+            freq[digit]++;
+            num /= 10;
+        }
+        
+        int oddCount = 0;
+        for (int f : freq) {
+            if (f % 2 != 0) oddCount++;
+        }
+        if (oddCount <= 1) {
+            System.out.println("Digits can be rearranged to form a palindrome.");
+        } else {
+            System.out.println("Digits cannot be rearranged to form a palindrome.");
+        }
+    }
+}
+25-
+import java.util.*;
+
+public class CreatePINUsing {
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        int z=sc.nextInt();
+       
+        int r=0 ;
+        int k=0;
+        int l=9999999;
+        while(x!=0){
+            r=x%10;
+            if(r>k){
+                k=r;
+            }if(r<l){
+                l=r;
+            }
+            x=x/10;
+            
+        }
+        int a,d=0;
+        int c=999999999;
+        int b=0;
+        int e=0;
+        int f=999999999;
+        while(y!=0){
+            a=y%10;
+            if(a>b){
+                b=a;
+            }if(a<c){
+                c=a;
+            }
+            y=y/10;
+        }while(z!=0){
+            d=z%10;
+            if(d>e){
+                e=d;
+            }if(d<f){
+                f=d;
+            }
+            z=z/10;      
+        }
+        
+        System.out.print(l);
+        System.out.print(c);
+        System.out.print(f);
+        System.out.print(k);
+        System.out.print(b);
+        System.out.print(e);
+    }
+    
+}
+        
+
+
+
+
+
+
+
+
